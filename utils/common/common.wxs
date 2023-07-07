@@ -1,0 +1,24 @@
+function indexOf(arr, value) {
+  if (arr.indexOf(value) < 0) {
+      return false;
+  } else {
+      return true;
+  }
+}
+function startsWith(string, value) {
+  if (string.indexOf(value) < 0) {
+      return false;
+  } else {
+      return true;
+  }
+}
+function macToId(str) {
+  if (str) {
+    return str.length <6 ? str : "DS" + str.substring(str.length-6).toUpperCase()
+  } else {
+    return ''
+  }
+}
+module.exports.indexOf = indexOf;
+module.exports.macToId = macToId;
+module.exports.startsWith = startsWith;

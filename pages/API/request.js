@@ -1,4 +1,4 @@
-const baseUrl = "https://dgiot.nemoface.com"
+const baseUrl = "https://stockapi.com.cn"
 // 参数 "options" 从接口函数传递过来
 const request = (options) => {
     return new Promise((resolve,reject) => {

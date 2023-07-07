@@ -1,3 +1,4 @@
+<wxs src="../../utils/common/common.wxs" module="tools" />
 <view class="containerBox">
     <view class="search_form">
         <picker mode="date" value="{{date}}"    bindchange="bindDateChange">
@@ -11,52 +12,14 @@
       <view wx:for="{{dataList}}" class="devItem">
         <view>
           <view class="flex-wrp" style="flex-direction:row;display: flex;">
-            <view class="flex-item" style="width: 96px;">设备  ID：</view> 
-            <view class="flex-item" style="width: calc(100% - 96px);">{{item.deviceId||'未知'}}</view>
-          </view>
-          <view class="flex-wrp" style="flex-direction:row;display: flex;">
-            <view class="flex-item" style="width: 96px;">操作时间：</view> 
-            <view class="flex-item" style="width: calc(100% - 96px);">{{item.createdAt}}</view>
-          </view>
-          <view class="flex-wrp" style="flex-direction:row;display: flex;">
-            <view class="flex-item" style="width: 96px;">操作类型：</view> 
-            <view class="flex-item" style="width: calc(100% - 96px);">  {{selectObj[item.type]||'未知'}}</view>
-          </view>
-          <view class="flex-wrp" style="flex-direction:row;display: flex;">
-            <view class="flex-item" style="width: 96px;">修改内容：</view> 
-            <view class="flex-item" style="width: calc(100% - 96px);">
-              <view wx:for="{{item.content}}"
-              wx:for-index="key"
-              wx:for-item="value"
-              wx:key="key">
-                {{key}}：{{value}}
-              </view>
-            </view>
+            <view class="flex-item" style="width: 96px;">{{item.name}}</view> 
+            <view class="flex-item" style="width: 96px;">{{item.thsCode}}</view> 
+            <view class="flex-item" style="{{tools.startsWith(item.chg, '-') ? 'width: 96px; color: green':'width: 96px; color: red'}}">{{item.chg + '%'}}</view> 
           </view>
         </view> 
       </view>
-    </view>
-    <view class="nav" >
-      <text   bindtap='onPrevious' style='color: #000;'>
-      上一页
-      </text>
-      <text bindtap='onQueryData' wx:if="{{page1<=allpage}}" data-id='{{page1}}' 
-      style="color: {{ pageNum == page1 ? 'rgb(79, 193, 229)' : '#000'}}">
-      第{{page1}}页
-      </text>
-      <text bindtap='onQueryData'  wx:if="{{page2<=allpage}}" data-id='{{page2}}' style="color: {{ pageNum == page2 ? 'rgb(79, 193, 229)' : '#000'}}">
-      第{{page2}}页
-      </text>
-      <text bindtap='onQueryData'  wx:if="{{page3<=allpage}}" data-id='{{page3}}' style="color: {{ pageNum == page3 ? 'rgb(79, 193, 229)' : '#000'}}">
-      第{{page3}}页
-      </text>
-      <text bindtap='onNext'  style='color: #000;'>
-      下一页
-      </text>
-    </view>
-    <view style="text-align:center;padding: 0 0 20rpx 0;">
-      <text>
-        共 <text style='color: rgb(79, 193, 229);'>{{allpage}}</text>页 <text style="margin-left: 20rpx;"></text>   当前为第<text style='color: rgb(79, 193, 229);'>{{pageNum}}</text>页
-      </text>
+      <view wx:if="{{dataList.length == 0}}">
+          暂无数据
+      </view>
     </view>
 </view>
