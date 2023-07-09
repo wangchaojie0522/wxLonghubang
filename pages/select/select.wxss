@@ -1,0 +1,56 @@
+page {
+  color: #333;
+}
+.containerBox {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  box-sizing: border-box;
+  background-color: #FFF;
+}
+.search_form , .dataList{
+  width: calc(100% - 60rpx);
+  padding: 20rpx 30rpx;
+  background-color: rgba(233,232,232, 0.5);
+}
+.search_form {
+  border-radius: 10rpx;
+}
+.search_form input{
+  /* height: 2rem;
+  min-height: 2rem; */
+  background-color: #FFF;
+  border-radius: 10rpx;
+}
+.dataList {
+  margin-top: 0rpx;
+}
+.inputClass {
+  background-color: #FFF;
+}
+.devItem {
+  background-color: #FFF;
+  border-bottom: 1px solid rgba(187,187,187,1);
+  margin-top: 5rpx;
+  padding: 10rpx 20rpx;
+  border-radius: 20rpx;
+}
+.device_list {
+  height: 150px;
+  width: max-content;
+}
+.nav{
+  background-color: #fff;
+  padding: 20rpx 0;
+  color: #7b7b7b;
+  width: 100%;
+  text-align: center;
+}
+.nav>text{
+  width: 16.4%;
+  text-align: center;
+  display: inline-block;
+}

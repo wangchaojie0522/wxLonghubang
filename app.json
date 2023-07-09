@@ -1,0 +1,39 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/ZTPool/ZTPool",
+    "pages/select/select",
+    "pages/infoPage/infoPage"
+  ],
+  "tabBar":{
+    "color": "#101010",
+    "selectedColor": "#3A74FF",
+    "backgroundColor": "#fff",
+    "borderStyle":"black",
+    "list":[{
+          "pagePath":"pages/index/index",
+          "iconPath":"pages/resources/images/user.png",
+          "selectedIconPath":"pages/resources/images/userHL.png",
+          "text":"龙虎榜"
+        },{
+          "pagePath":"pages/ZTPool/ZTPool",
+          "iconPath":"pages/resources/images/device.png",
+          "selectedIconPath":"pages/resources/images/deviceHL.png",
+          "text":"涨停板"
+        },{
+          "pagePath":"pages/select/select",
+          "iconPath":"pages/resources/images/preview.png",
+          "selectedIconPath":"pages/resources/images/previewHL.png",
+          "text":"选股"
+      }]
+  },
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,30 @@
+<wxs src="../../utils/common/common.wxs" module="tools" />
+<view class="containerBox">
+    <view class="search_form">
+        <picker mode="date" value="{{date}}"    bindchange="bindDateChange">
+          <view class="picker">
+            日期: {{date}}
+          </view>
+        </picker>
+    </view>
+    <view class="dataList">
+    
+      <view wx:for="{{dataList}}" class="devItem">
+        <view>
+          <view class="flex-wrp" style="flex-direction:row;display: flex;align-items: center;">
+            <view class="flex-item" style="flex: 1;">
+           <text>{{item.name}}</text> 
+           <text>{{item.code}}</text>
+            </view> 
+            <view class="flex-item" style="flex: 1;">{{item.firstCeilingTime}}</view> 
+            <view class="flex-item" style="flex: 1;">{{item.industry}}</view> 
+            <view class="flex-item" style="flex: 1;">{{item.ceilingAmount}}</view> 
+
+          </view>
+        </view> 
+      </view>
+      <view wx:if="{{dataList.length == 0}}">
+          暂无数据
+      </view>
+    </view>
+</view>

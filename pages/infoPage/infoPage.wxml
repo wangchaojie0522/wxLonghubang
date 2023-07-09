@@ -1,0 +1,27 @@
+<wxs src="../../utils/common/common.wxs" module="tools" />
+<view class="containerBox">
+    <view class="search_form">
+        <picker mode="date" value="{{date}}"    bindchange="bindDateChange">
+          <view class="picker">
+            日期: {{date}}
+          </view>
+        </picker>
+    </view>
+    <view class="dataList">
+    
+      <view wx:for="{{dataList}}" class="devItem">
+        <view>
+          <view class="flex-wrp" style="flex-direction:row;display: flex;">
+            <view class="flex-item" style="flex: 1;">{{item.name}}</view> 
+            <view class="flex-item" style="flex: 1;color: #0E4CD3" bindtap="onLinkInfo" data-item="{{item}}">
+            {{item.thsCode}}
+            </view> 
+            <view class="flex-item" style="{{tools.startsWith(item.chg, '-') ? 'flex: 1; color: green':'flex: 1; color: red'}}">{{item.chg + '%'}}</view> 
+          </view>
+        </view> 
+      </view>
+      <view wx:if="{{dataList.length == 0}}">
+          暂无数据
+      </view>
+    </view>
+</view>
